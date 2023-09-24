@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server Side Processing</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css"/>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function () {
+            new DataTable('#example', {
+                ajax: 'scripts/server_processing.php',
+                processing: true,
+                serverSide: true
+            });
+        });
+    </script>
+</head>
+<body>
+<h1>Authors Table</h1>
+<table id="example" class="display" style="width:100%">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>BirthDate</th>
+        <th>Added</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>BirthDate</th>
+        <th>Added</th>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>
